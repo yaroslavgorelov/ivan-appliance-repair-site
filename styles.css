@@ -297,6 +297,42 @@ nav ul li a.active {
     text-align: center;
 }
 
+/* Brands Section */
+.brands-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.brand-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.brand-logo img {
+    max-width: 100%;
+    max-height: 70px;
+    object-fit: contain;
+}
+
 /* Why Choose Us */
 .why-choose-us {
     padding: 80px 0;
