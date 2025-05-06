@@ -118,6 +118,39 @@ header .container {
     padding: 15px 20px;
 }
 
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.right-section {
+    display: flex;
+    gap: 40px;
+    text-align: right;
+    color: #ffffff;
+}
+
+.header-contact, .header-hours {
+    font-size: 0.9rem;
+}
+
+.header-contact h3, .header-hours h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--accent-color);
+}
+
+.header-contact p, .header-hours p {
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.header-contact i {
+    margin-right: 5px;
+    color: var(--accent-color);
+}
+
 .logo h1 {
     font-size: 1.8rem;
     margin-bottom: 0;
@@ -142,8 +175,15 @@ nav ul {
     list-style: none;
 }
 
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 nav ul li {
-    margin-left: 25px;
+    margin: 0 12px;
 }
 
 nav ul li a {
@@ -354,13 +394,36 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .right-section {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
     }
     
+    .left-section {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 15px;
+    }
+    
+    .right-section {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header-contact, .header-hours {
+        text-align: center;
+    }
+    
     nav ul {
-        margin-top: 15px;
+        margin-top: 10px;
         flex-wrap: wrap;
         justify-content: center;
     }
