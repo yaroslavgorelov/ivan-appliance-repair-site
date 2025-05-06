@@ -124,6 +124,10 @@ header .container {
     gap: 30px;
 }
 
+.logo {
+    margin-left: -15px; /* Move logo to the left */
+}
+
 .right-section {
     display: flex;
     gap: 40px;
