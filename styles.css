@@ -132,11 +132,11 @@ header .container {
 }
 
 .header-contact, .header-hours {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .header-contact h3, .header-hours h3 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     margin-bottom: 8px;
     color: var(--accent-color);
 }
@@ -165,7 +165,7 @@ header .container {
 }
 
 .logo-img {
-    height: 60px;
+    height: 75px;
     margin-right: 10px;
     vertical-align: middle;
 }
