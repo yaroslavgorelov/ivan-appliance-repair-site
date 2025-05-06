@@ -222,9 +222,9 @@ nav ul li a.active {
 /* Hero Section */
 .hero {
     background: url('images/Banner.png') center/cover no-repeat;
-    color: #003366;
+    color: var(--light-text);
     padding: 100px 0;
-    text-align: center;
+    text-align: end;
 }
 
 .hero-content h2 {
