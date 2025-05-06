@@ -222,7 +222,7 @@ nav ul li a.active {
 /* Hero Section */
 .hero {
     background: url('images/Banner.png') center/cover no-repeat;
-    color: var(--light-text);
+    color: #003366;
     padding: 100px 0;
     text-align: center;
 }
