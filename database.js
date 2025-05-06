@@ -7,7 +7,7 @@
 
 class BookingDatabase {
     constructor() {
-        this.dbName = 'IvanApplianceRepairDB';
+        this.dbName = 'ApplianceRepairProfessionalsDB';
         this.dbVersion = 1;
         this.bookingsStore = 'bookings';
         this.db = null;
