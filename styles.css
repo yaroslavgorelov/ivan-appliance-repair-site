@@ -283,8 +283,8 @@ nav ul li a.active {
 }
 
 .service-img {
-    width: 70px;
-    height: 70px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
 }
 
