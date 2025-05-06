@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service | Ivan's Appliance Repair Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span class="logo-icon"><i class="fas fa-tools"></i></span> Ivan's Appliance Repair</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="booking.html" class="active">Book Now</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Book a Service Appointment</h1>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-intro">
+                <p>Please fill out the form below to schedule a service appointment. We'll confirm your appointment via email or phone as soon as possible.</p>
+            </div>
+            <div class="booking-container">
+                <form id="bookingForm" class="booking-form">
+                    <h3>Service Information</h3>
+                    <div class="form-group">
+                        <label for="serviceType">Service Type*</label>
+                        <select id="serviceType" name="serviceType" class="form-control" required>
+                            <option value="">Select a service</option>
+                            <option value="refrigerator">Refrigerator Repair</option>
+                            <option value="washer">Washer Repair</option>
+                            <option value="dryer">Dryer Repair</option>
+                            <option value="dishwasher">Dishwasher Repair</option>
+                            <option value="oven">Oven Repair</option>
+                            <option value="microwave">Microwave Repair</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="applianceBrand">Appliance Brand</label>
+                        <input type="text" id="applianceBrand" name="applianceBrand" class="form-control" placeholder="e.g., Whirlpool, Samsung, LG">
+                    </div>
+                    <div class="form-group">
+                        <label for="applianceModel">Appliance Model (if known)</label>
+                        <input type="text" id="applianceModel" name="applianceModel" class="form-control" placeholder="e.g., WRF535SWHZ">
+                    </div>
+                    <div class="form-group">
+                        <label for="issueDescription">Description of Issue*</label>
+                        <textarea id="issueDescription" name="issueDescription" class="form-control" rows="4" placeholder="Please describe the problem you're experiencing with your appliance" required></textarea>
+                    </div>
+
+                    <h3>Preferred Date and Time</h3>
+                    <div class="form-group">
+                        <label for="preferredDate">Preferred Date*</label>
+                        <input type="text" id="preferredDate" name="preferredDate" class="form-control datepicker" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferredTime">Preferred Time*</label>
+                        <select id="preferredTime" name="preferredTime" class="form-control" required>
+                            <option value="">Select a time</option>
+                            <option value="morning">Morning (8am - 12pm)</option>
+                            <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                            <option value="evening">Evening (4pm - 6pm)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="alternateDate">Alternate Date (optional)</label>
+                        <input type="text" id="alternateDate" name="alternateDate" class="form-control datepicker">
+                    </div>
+                    <div class="form-group">
+                        <label for="alternateTime">Alternate Time (optional)</label>
+                        <select id="alternateTime" name="alternateTime" class="form-control">
+                            <option value="">Select a time</option>
+                            <option value="morning">Morning (8am - 12pm)</option>
+                            <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                            <option value="evening">Evening (4pm - 6pm)</option>
+                        </select>
+                    </div>
+
+                    <h3>Contact Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name*</label>
+                            <input type="text" id="firstName" name="firstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name*</label>
+                            <input type="text" id="lastName" name="lastName" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+
+                    <h3>Service Address</h3>
+                    <div class="form-group">
+                        <label for="address">Street Address*</label>
+                        <input type="text" id="address" name="address" class="form-control" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City*</label>
+                            <input type="text" id="city" name="city" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code*</label>
+                            <input type="text" id="zipCode" name="zipCode" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information (optional)</label>
+                        <textarea id="additionalInfo" name="additionalInfo" class="form-control" rows="3" placeholder="Parking instructions, gate codes, etc."></textarea>
+                    </div>
+
+                    <div class="form-group terms-checkbox">
+                        <input type="checkbox" id="termsAgree" name="termsAgree" required>
+                        <label for="termsAgree">I agree to the <a href="#">terms and conditions</a>*</label>
+                    </div>
+
+                    <div id="bookingMessage" class="booking-message"></div>
+                    
+                    <button type="submit" class="btn btn-primary">Book Appointment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-info">
+        <div class="container">
+            <div class="booking-info-grid">
+                <div class="booking-info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>What to Expect</h3>
+                    <p>After submitting your booking request, you'll receive a confirmation email. One of our team members will contact you to confirm the appointment details.</p>
+                </div>
+                <div class="booking-info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Service Fees</h3>
+                    <p>Our standard diagnostic fee is applied to all service calls. This fee will be applied toward the total cost if you proceed with the repair.</p>
+                </div>
+                <div class="booking-info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Cancellation Policy</h3>
+                    <p>If you need to cancel or reschedule your appointment, please provide at least 24 hours notice to avoid a cancellation fee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ivan's Appliance Repair</h3>
+                    <p>Professional appliance repair services in the Tampa Bay Area.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> (813) 363-8975</p>
+                    <p><i class="fas fa-envelope"></i> ars@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 8am - 6pm</p>
+                    <p>Saturday: 9am - 3pm</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Service Area</h3>
+                    <p>Tampa Bay Area</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ivan's Appliance Repair. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+    <script src="database.js"></script>
+    <script src="booking.js"></script>
+</body>
+</html>
