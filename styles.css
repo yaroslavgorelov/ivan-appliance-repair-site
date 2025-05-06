@@ -224,7 +224,7 @@ nav ul li a.active {
     background: url('images/Banner.png') center/cover no-repeat;
     color: var(--light-text);
     padding: 100px 0;
-    text-align: end;
+    text-align: center;
 }
 
 .hero-content h2 {
