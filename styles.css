@@ -221,14 +221,21 @@ nav ul li a.active {
 
 /* Hero Section */
 .hero {
-    background: url('images/Banner.png') center/cover no-repeat;
     color: var(--light-text);
     padding: 100px 0;
     text-align: center;
     position: relative;
+    background-color: #f8f9fa;
 }
 
-.hero::before {
+.hero .container {
+    position: relative;
+    background: url('images/Banner.png') center/cover no-repeat;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hero .container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -242,6 +249,7 @@ nav ul li a.active {
 .hero-content {
     position: relative;
     z-index: 2;
+    padding: 80px 20px;
 }
 
 .hero-content h2 {
