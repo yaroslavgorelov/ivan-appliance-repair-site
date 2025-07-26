@@ -114,11 +114,88 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
+    // Slideshow functionality for About page
+    const setupSlideshow = () => {
+        const slideshowContainer = document.querySelector('.slideshow-container');
+        if (!slideshowContainer) return;
+
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+        let slideInterval;
+
+        // Function to show specific slide
+        const showSlide = (index) => {
+            // Remove active class from all slides and indicators
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'prev');
+            });
+            indicators.forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+
+            // Add prev class to current slide for exit animation
+            if (slides[currentSlide]) {
+                slides[currentSlide].classList.add('prev');
+            }
+
+            // Update current slide index
+            currentSlide = index;
+
+            // Add active class to new slide and indicator
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        };
+
+        // Function to go to next slide
+        const nextSlide = () => {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        };
+
+        // Function to go to previous slide
+        const prevSlide = () => {
+            const prev = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prev);
+        };
+
+        // Add click events to indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showSlide(index);
+                startAutoSlide();
+            });
+        });
+
+        // Auto-slide functionality
+        const startAutoSlide = () => {
+            slideInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+        };
+
+        // Pause auto-slide on hover
+        slideshowContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        // Resume auto-slide when mouse leaves
+        slideshowContainer.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+
+        // Initialize slideshow
+        if (slides.length > 0) {
+            showSlide(0);
+            startAutoSlide();
+        }
+    };
+
     // Initialize all functionality
     setupMobileNav();
     setupFaqAccordion();
     setupSmoothScrolling();
     highlightCurrentPage();
+    setupSlideshow();
 
     // Add responsive styles for mobile
     const addResponsiveStyles = () => {
