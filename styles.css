@@ -645,7 +645,7 @@ footer {
 .services-intro p {
     margin-bottom: 0;
     font-size: 1.1rem;
-    text-align: center;
+    text-align: left;
     max-width: 800px;
     margin: 0 auto;
 }
