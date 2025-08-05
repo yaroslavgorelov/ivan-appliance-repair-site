@@ -740,6 +740,14 @@ footer {
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    height: auto;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    object-fit: contain;
 }
 
 /* Individual PNG image sizes for services page */
@@ -965,5 +973,22 @@ footer {
 
 .fas.fa-microwave:before {
     content: "\f7b6"; /* Using bolt icon as substitute */
-}/ *   F o r c e   C S S   r e l o a d   -   0 8 / 0 4 / 2 0 2 5   2 3 : 2 8 : 3 1   * /  
- 
+.fas.fa-microwave:before {
+    content: "\f7b6"; /* Using bolt icon as substitute */
+}
+
+/* Force CSS reload - 08/04/2025 23:28:31 */
+/* Chrome compatibility fix - 08/04/2025 23:37:36 */
+
+/* Additional Chrome-specific fixes */
+.service-item {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.service-item-image {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
