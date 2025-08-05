@@ -645,8 +645,29 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Individual PNG image sizes for services page */
 .service-item-image img[src="images/Refrigerator Repair.png"] {
     width: 75%;
+}
+
+.service-item-image img[src="images/Washer Repair.png"] {
+    width: 70%;
+}
+
+.service-item-image img[src="images/Dryer Repair.png"] {
+    width: 80%;
+}
+
+.service-item-image img[src="images/Dishwasher Repair.png"] {
+    width: 65%;
+}
+
+.service-item-image img[src="images/Oven Repair.png"] {
+    width: 85%;
+}
+
+.service-item-image img[src="images/Microwave Repair.png"] {
+    width: 60%;
 }
 
 .service-item-content h3 {
