@@ -994,6 +994,22 @@ footer .container { padding: 0 20px; }
 .services-section.card-view .service-item:first-of-type { gap: 16px; flex-direction: row; }
 .services-section.card-view .service-item:nth-of-type(2) { flex-direction: row; }
 
+/* Enlarge Refrigerator Repair image (first card) 2x */
+.services-section.card-view .service-item:first-of-type .service-item-image {
+    flex: 0 0 640px;
+    width: 640px;
+}
+@media (max-width: 1200px) {
+    .services-section.card-view .service-item:first-of-type .service-item-image {
+        flex-basis: 520px; width: 520px;
+    }
+}
+@media (max-width: 900px) {
+    .services-section.card-view .service-item:first-of-type .service-item-image {
+        flex-basis: 100%; width: 100%;
+    }
+}
+
 /* Two-column grid on desktop, single column on tablet/mobile */
 .services-section.card-view .container {
     display: grid;
