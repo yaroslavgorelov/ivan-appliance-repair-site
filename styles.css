@@ -116,7 +116,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 0; /* horizontal padding comes from .container */
+    padding: 12px 20px; /* match global .container horizontal padding for alignment */
     background-color: #003366;
     border-radius: 8px;
     margin: 10px 0;
