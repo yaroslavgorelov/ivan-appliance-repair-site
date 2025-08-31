@@ -743,6 +743,14 @@ footer .container { padding: 0 20px; }
     padding: 80px 0;
 }
 
+.mission-section {
+    padding: 80px 0;
+}
+
+.team-section {
+    padding: 80px 0;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: auto 1fr;
