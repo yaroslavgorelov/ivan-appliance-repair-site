@@ -176,7 +176,7 @@ header .container {
 }
 
 .logo-img {
-    height: 124px;
+    height: 80px;
     margin-right: 10px;
     vertical-align: middle;
 }
@@ -232,10 +232,11 @@ nav ul li a.active {
 /* Hero Section */
 .hero {
     color: var(--light-text);
-    padding: 100px 0;
+    padding: 0; /* remove gap above hero */
     text-align: center;
     position: relative;
     background-color: #f8f9fa;
+    margin-top: 0;
 }
 
 .hero .container {
