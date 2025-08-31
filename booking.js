@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     storeBookingData(bookingData)
                         .then(response => {
                             // Show success message
-                            bookingMessage.classList.add('success-message');
+                            bookingMessage.className = '';
+                            bookingMessage.classList.add('form-alert', 'success-message');
                             bookingMessage.textContent = 'Your booking request has been submitted successfully! We will contact you shortly to confirm your appointment.';
                             
                             // Reset form
@@ -45,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         })
                         .catch(error => {
                             // Show error message
-                            bookingMessage.classList.add('error-message');
+                            bookingMessage.className = '';
+                            bookingMessage.classList.add('form-alert', 'form-error');
                             bookingMessage.textContent = 'There was an error submitting your booking request. Please try again or contact us directly.';
                             
                             console.error('Booking submission error:', error);
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function validateForm() {
         // Reset previous error messages
-        const errorElements = bookingForm.querySelectorAll('.error-message');
+        const errorElements = bookingForm.querySelectorAll('.field-error');
         errorElements.forEach(el => el.remove());
         
         let isValid = true;
@@ -102,14 +104,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function showError(field, message) {
         // Remove any existing error message
-        const existingError = field.parentElement.querySelector('.error-message');
+        const existingError = field.parentElement.querySelector('.field-error');
         if (existingError) {
             existingError.remove();
         }
         
         // Create and append error message
         const errorElement = document.createElement('div');
-        errorElement.classList.add('error-message');
+        errorElement.classList.add('field-error');
         errorElement.textContent = message;
         field.parentElement.appendChild(errorElement);
         
@@ -119,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Remove error highlight when field is changed
         field.addEventListener('input', function() {
             field.classList.remove('error');
-            const error = field.parentElement.querySelector('.error-message');
+            const error = field.parentElement.querySelector('.field-error');
             if (error) {
                 error.remove();
             }
@@ -170,36 +172,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const addValidationStyles = () => {
         const style = document.createElement('style');
         style.textContent = `
-            .error-message {
+            .field-error {
                 color: var(--error-color);
                 font-size: 0.85rem;
                 margin-top: 5px;
             }
-            
+
+            .form-alert {
+                padding: 15px;
+                border-radius: 4px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
             .success-message {
                 color: var(--success-color);
                 background-color: rgba(40, 167, 69, 0.1);
                 border: 1px solid var(--success-color);
-                padding: 15px;
-                border-radius: 4px;
-                margin-bottom: 20px;
-                text-align: center;
             }
-            
-            .error-message {
+
+            .form-error {
                 color: var(--error-color);
                 background-color: rgba(220, 53, 69, 0.1);
                 border: 1px solid var(--error-color);
-                padding: 15px;
-                border-radius: 4px;
-                margin-bottom: 20px;
-                text-align: center;
             }
-            
+
             .form-control.error {
                 border-color: var(--error-color);
             }
-            
+
             .booking-message {
                 margin: 20px 0;
             }

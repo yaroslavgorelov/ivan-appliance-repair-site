@@ -470,6 +470,33 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Map placeholder */
+.map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.map-box {
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    background: repeating-linear-gradient(45deg, #e9eff5, #e9eff5 10px, #f6f9fc 10px, #f6f9fc 20px);
+    border: 1px solid #cfd8e3;
+    border-radius: 8px;
+    color: #3b4a5a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+.map-note {
+    color: #555;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .right-section {

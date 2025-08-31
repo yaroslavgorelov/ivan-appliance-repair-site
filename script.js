@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     background: none;
                     border: none;
                     font-size: 1.5rem;
-                    color: var(--primary-color);
+                    color: var(--light-text);
                     cursor: pointer;
                     position: absolute;
                     right: 20px;
