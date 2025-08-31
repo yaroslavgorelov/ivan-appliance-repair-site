@@ -10,7 +10,7 @@
     --success-color: #28a745;
     --error-color: #dc3545;
     --warning-color: #ffc107;
-    --container-width: 1100px; /* site max width */
+    --container-width: 100%; /* full width site */
 }
 
 * {
@@ -119,9 +119,9 @@ header .container {
     align-items: center;
     padding: 12px 20px; /* inner spacing */
     background-color: #003366;
-    max-width: var(--container-width); /* align with site width */
-    border-radius: 8px; /* consistent with sections */
-    margin: 10px auto; /* center header bar */
+    max-width: 100%; /* span full width */
+    border-radius: 0; /* flush edges */
+    margin: 0; /* no outer margin */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* localized shadow */
 }
 
@@ -246,7 +246,7 @@ nav ul li a.active {
 .hero .container {
     position: relative;
     background: url('images/Banner.png') center/cover no-repeat;
-    border-radius: 8px;
+    border-radius: 0; /* full width hero edges */
     overflow: hidden;
 }
 
@@ -402,19 +402,15 @@ nav ul li a.active {
     margin-bottom: 15px;
 }
 
-/* CTA Section */
+/* CTA Section (full width) */
 .cta-section {
-    background: transparent; /* keep page background full width */
-    padding: 30px 0;
-}
-
-.cta-section .container {
     background-color: #003366;
     color: var(--light-text);
+    padding: 30px 0;
     text-align: center;
-    padding: 30px 20px;
-    border-radius: 8px;
 }
+
+.cta-section .container { padding: 0 20px; }
 
 .cta-section h2 {
     font-size: 2.2rem;
@@ -440,18 +436,14 @@ nav ul li a.active {
     color: var(--light-text);
 }
 
-/* Footer */
+/* Footer (full width) */
 footer {
-    background: transparent; /* container will get the dark bg */
+    background-color: #1a1a1a;
+    color: #fff;
     padding: 30px 0 20px;
 }
 
-footer .container {
-    background-color: #1a1a1a;
-    color: #fff;
-    border-radius: 8px;
-    padding: 30px 20px 20px;
-}
+footer .container { padding: 0 20px; }
 
 .footer-content {
     display: grid;
