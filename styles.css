@@ -866,7 +866,8 @@ footer .container { padding: 0 20px; }
 .services-intro p {
     margin-bottom: 0;
     font-size: 1.1rem;
-    text-align: center;
+    text-align: justify; /* align to both edges */
+    text-justify: inter-word;
     max-width: 800px;
     margin: 0 auto;
 }
