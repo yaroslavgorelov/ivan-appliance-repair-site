@@ -879,13 +879,14 @@ footer .container { padding: 0 20px; }
     grid-template-columns: 220px 1fr; /* fixed image column for consistency */
     gap: 16px; /* tight space between image and text */
     align-items: start; /* align items to the top of the row */
+    justify-items: start; /* prevent items from centering in their cells */
 }
 
 .service-item:nth-child(even) {
     grid-template-columns: 1fr 220px; /* mirrored layout */
 }
 
-.service-item-image { display: flex; width: 220px; align-self: start; }
+.service-item-image { display: flex; width: 220px; align-self: start; justify-content: flex-end; }
 .service-item:nth-child(odd) .service-item-image { justify-content: flex-end; }
 .service-item:nth-child(even) .service-item-image { justify-content: flex-start; }
 .service-item-image img {
@@ -894,6 +895,8 @@ footer .container { padding: 0 20px; }
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+.service-item-content { justify-self: start; }
 
 /* Individual PNG image sizes for services page */
 /* (Deprecated) individual PNG sizing removed in favor of consistent layout */
