@@ -982,6 +982,14 @@ footer .container { padding: 0 20px; }
 }
 .services-section.card-view .service-item-image { flex: initial; width: 100%; }
 .services-section.card-view .service-item-image img { width: 100% !important; height: auto; border-radius: 8px; }
+.services-section.card-view .service-item-image img[alt="Dishwasher Repair"] {
+    width: 33% !important; /* 3x smaller */
+    display: block;
+    margin: 0 auto; /* center within card */
+}
+@media (max-width: 900px) {
+    .services-section.card-view .service-item-image img[alt="Dishwasher Repair"] { width: 60% !important; }
+}
 .services-section.card-view .service-item-content { flex: initial; width: 100%; max-width: 900px; }
 .services-section.card-view .service-item:first-of-type { gap: 16px; }
 .services-section.card-view .service-item:first-of-type .service-item-content { flex: initial; max-width: 100%; }
