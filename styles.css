@@ -129,7 +129,7 @@ header .container {
 }
 
 .logo {
-    margin-left: -15px; /* Move logo to the left */
+    margin-left: 0; /* align with container */
 }
 
 .right-section {
@@ -187,6 +187,9 @@ nav ul {
     display: flex;
     list-style: none;
 }
+
+/* Hide mobile toggle by default (shown in mobile via injected CSS) */
+.mobile-nav-toggle { display: none; }
 
 nav ul {
     display: flex;
