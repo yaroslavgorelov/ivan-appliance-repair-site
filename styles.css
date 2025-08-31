@@ -968,6 +968,24 @@ footer .container { padding: 0 20px; }
 .service-item-image img { width: 220px !important; height: auto; }
 .service-item-content { flex: 1 1 auto; }
 
+/* Card view for Services: each service as a separate block */
+.services-section.card-view .service-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    margin-bottom: 24px;
+}
+.services-section.card-view .service-item-image { flex: initial; width: 100%; }
+.services-section.card-view .service-item-image img { width: 100% !important; height: auto; border-radius: 8px; }
+.services-section.card-view .service-item-content { flex: initial; width: 100%; max-width: 900px; }
+.services-section.card-view .service-item:first-of-type { gap: 16px; }
+.services-section.card-view .service-item:first-of-type .service-item-content { flex: initial; max-width: 100%; }
+.services-section.card-view .service-item:first-of-type .service-item-image { flex: initial; width: 100%; max-width: 100%; }
+
 /* Refrigerator Repair (first service item) — text 1/3 width, large image pressed to text */
 .services-section .service-item:first-of-type { gap: 8px; }
 .services-section .service-item:first-of-type .service-item-content {
