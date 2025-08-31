@@ -901,6 +901,19 @@ footer .container { padding: 0 20px; }
 /* Individual PNG image sizes for services page */
 /* (Deprecated) individual PNG sizing removed in favor of consistent layout */
 
+/* Services layout override: use flex for robust alignment */
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+.service-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.service-item-image { flex: 0 0 220px; width: 220px; }
+.service-item-image img { width: 220px !important; height: auto; }
+.service-item-content { flex: 1 1 auto; }
+
 .service-item-content h3 {
     margin-bottom: 15px;
     font-size: 1.8rem;

@@ -244,8 +244,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     margin: 10px 0;
                 }
                 
+                /* Stack service items vertically on mobile */
                 .service-item, .service-item:nth-child(even) {
-                    grid-template-columns: 1fr;
+                    flex-direction: column;
                 }
                 
                 .contact-container {
