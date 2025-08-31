@@ -316,6 +316,26 @@ nav ul li a.active {
 }
 .trust-list i { color: var(--secondary-color); }
 
+/* Lead (mini) form */
+.lead-strip { background: #fff; padding: 15px 0 5px; }
+.lead-form { width: 100%; }
+.lead-row { display: grid; grid-template-columns: 1.2fr 1fr 0.8fr 1.2fr auto; gap: 10px; align-items: center; }
+.lead-input { 
+    width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 6px;
+    font-size: 0.95rem; min-height: 42px;
+}
+.lead-submit { height: 42px; }
+
+@media (max-width: 900px) {
+    .lead-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+    .lead-row { grid-template-columns: 1fr; }
+}
+
+/* About slideshow sizing */
+.slide-img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+
 /* Services Overview */
 .services-overview {
     padding: 80px 0;

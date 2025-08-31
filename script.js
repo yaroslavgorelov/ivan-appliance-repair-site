@@ -261,4 +261,19 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     addResponsiveStyles();
+
+    // Lead form -> redirect to booking with prefilled params
+    const leadForm = document.getElementById('leadForm');
+    if (leadForm) {
+        leadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = new FormData(leadForm);
+            const params = new URLSearchParams();
+            ['name','phone','zip','serviceType'].forEach(k=>{
+                if (data.get(k)) params.set(k, data.get(k));
+            });
+            params.set('prefill','1');
+            window.location.href = 'booking.html?' + params.toString();
+        });
+    }
 });

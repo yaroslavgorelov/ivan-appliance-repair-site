@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.getElementById('bookingForm');
     const bookingMessage = document.getElementById('bookingMessage');
+    prefillFromQuery();
     
     if (bookingForm) {
         // Initialize form validation and submission
@@ -209,4 +210,22 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     addValidationStyles();
+
+    // Prefill fields from query params (from Home lead form)
+    function prefillFromQuery() {
+        const params = new URLSearchParams(window.location.search);
+        if (!params.has('prefill')) return;
+
+        const mapping = {
+            serviceType: 'serviceType',
+            name: 'name',
+            phone: 'phone',
+            zip: 'zipCode'
+        };
+        Object.entries(mapping).forEach(([q, id]) => {
+            const val = params.get(q);
+            const el = document.getElementById(id);
+            if (val && el) el.value = val;
+        });
+    }
 });
