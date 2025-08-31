@@ -878,14 +878,14 @@ footer .container { padding: 0 20px; }
     display: grid;
     grid-template-columns: minmax(140px, 260px) 1fr; /* 2x smaller image column */
     gap: 16px; /* tight space between image and text */
-    align-items: center;
+    align-items: start; /* align items to the top of the row */
 }
 
 .service-item:nth-child(even) {
     grid-template-columns: 1fr minmax(140px, 260px); /* mirrored layout (half size) */
 }
 
-.service-item-image { display: flex; width: 100%; }
+.service-item-image { display: flex; width: 100%; align-self: start; }
 .service-item:nth-child(odd) .service-item-image { justify-content: flex-end; }
 .service-item:nth-child(even) .service-item-image { justify-content: flex-start; }
 .service-item-image img {
