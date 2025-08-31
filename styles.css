@@ -876,21 +876,21 @@ footer .container { padding: 0 20px; }
 .service-item {
     margin-bottom: 50px;
     display: grid;
-    grid-template-columns: auto 1fr; /* image shrinks to content width */
+    grid-template-columns: minmax(280px, 520px) 1fr; /* fixed, responsive image column */
     gap: 16px; /* tight space between image and text */
     align-items: center;
 }
 
 .service-item:nth-child(even) {
-    grid-template-columns: 1fr auto; /* text first, image sized to content */
+    grid-template-columns: 1fr minmax(280px, 520px); /* mirrored layout */
 }
 
-.service-item-image { display: flex; max-width: 520px; }
+.service-item-image { display: flex; width: 100%; }
 .service-item:nth-child(odd) .service-item-image { justify-content: flex-end; }
 .service-item:nth-child(even) .service-item-image { justify-content: flex-start; }
 .service-item-image img {
-    width: 100% !important; /* override individual tweaks for consistent look */
-    max-width: 520px;
+    width: 100% !important; /* fill container */
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
