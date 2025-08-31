@@ -906,9 +906,10 @@ footer .container { padding: 0 20px; }
     display: flex;
     align-items: flex-start;
     gap: 16px;
+    flex-direction: row-reverse; /* image right, text left by default */
 }
 .service-item:nth-child(even) {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; /* for our markup (content first), this puts image left */
 }
 .service-item-image { flex: 0 0 220px; width: 220px; }
 .service-item-image img { width: 220px !important; height: auto; }
