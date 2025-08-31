@@ -276,4 +276,28 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = 'booking.html?' + params.toString();
         });
     }
+
+    // Progressive WebP swap: replace PNG/JPG with WEBP if supported and file exists
+    (function enableWebPSwap(){
+        const supportsWebP = () => new Promise(resolve => {
+            const img = new Image();
+            img.onload = () => resolve(img.width > 0);
+            img.onerror = () => resolve(false);
+            img.src = 'data:image/webp;base64,UklGRiIAAABXRUJQVlA4ICgAAAAvAAAAAAfQ//73v/+BiOh/AAA=';
+        });
+
+        const toWebp = src => src.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+
+        supportsWebP().then(ok => {
+            if (!ok) return;
+            const candidates = document.querySelectorAll('img.auto-webp');
+            candidates.forEach(img => {
+                const webpSrc = img.dataset.webp || toWebp(img.getAttribute('src'));
+                if (!/\.webp$/i.test(webpSrc)) return;
+                const test = new Image();
+                test.onload = () => { img.setAttribute('src', webpSrc); };
+                test.src = webpSrc; // if 404, onload won't fire
+            });
+        });
+    })();
 });
