@@ -237,6 +237,11 @@ nav ul li a.active {
     color: var(--accent-color);
 }
 
+/* Language switch */
+.lang-switch { display: flex; gap: 8px; align-items: center; margin-left: 16px; }
+.lang-switch a { color: #fff; font-weight: 600; opacity: 0.7; border: 1px solid rgba(255,255,255,0.4); padding: 4px 8px; border-radius: 4px; }
+.lang-switch a.active, .lang-switch a:hover { opacity: 1; border-color: #fff; }
+
 /* Hero Section */
 .hero {
     color: var(--light-text);

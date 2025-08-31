@@ -318,4 +318,49 @@ document.addEventListener('DOMContentLoaded', function() {
         // Fallback: activate on load
         serviceProcess.classList.add('in-view');
     }
+
+    // Language switcher: EN/UK
+    (function i18nSetup(){
+        const dict = window.I18N_DICTIONARY || {};
+        const getLang = () => localStorage.getItem('lang') || 'en';
+        const setLang = (l) => localStorage.setItem('lang', l);
+
+        function translateNode(node, lang) {
+            const map = dict[lang];
+            if (!map) return;
+            const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null);
+            let current;
+            while ((current = walker.nextNode())) {
+                const raw = current.nodeValue;
+                const key = raw.trim();
+                if (!key) continue;
+                if (map[key]) {
+                    // Preserve surrounding whitespace
+                    current.nodeValue = raw.replace(key, map[key]);
+                }
+            }
+        }
+
+        function applyLang(lang){
+            document.documentElement.setAttribute('lang', lang === 'uk' ? 'uk' : 'en');
+            translateNode(document.body, lang);
+            // Update active state
+            document.querySelectorAll('.lang-switch a').forEach(a=>{
+                a.classList.toggle('active', a.dataset.lang === lang);
+            });
+        }
+
+        // Wire buttons
+        document.querySelectorAll('.lang-switch a').forEach(a => {
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = a.dataset.lang;
+                setLang(lang);
+                applyLang(lang);
+            });
+        });
+
+        // Initial
+        applyLang(getLang());
+    })();
 });
