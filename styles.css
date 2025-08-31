@@ -876,21 +876,20 @@ footer .container { padding: 0 20px; }
 .service-item {
     margin-bottom: 50px;
     display: grid;
-    grid-template-columns: minmax(140px, 260px) 1fr; /* 2x smaller image column */
+    grid-template-columns: 220px 1fr; /* fixed image column for consistency */
     gap: 16px; /* tight space between image and text */
     align-items: start; /* align items to the top of the row */
 }
 
 .service-item:nth-child(even) {
-    grid-template-columns: 1fr minmax(140px, 260px); /* mirrored layout (half size) */
+    grid-template-columns: 1fr 220px; /* mirrored layout */
 }
 
-.service-item-image { display: flex; width: 100%; align-self: start; }
+.service-item-image { display: flex; width: 220px; align-self: start; }
 .service-item:nth-child(odd) .service-item-image { justify-content: flex-end; }
 .service-item:nth-child(even) .service-item-image { justify-content: flex-start; }
 .service-item-image img {
-    width: 100% !important; /* fill container */
-    max-width: 260px; /* hard cap to keep images small */
+    width: 220px !important; /* fixed size */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
