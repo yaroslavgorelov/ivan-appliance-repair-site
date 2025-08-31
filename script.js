@@ -8,18 +8,27 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!document.querySelector('.mobile-nav-toggle')) {
             const mobileNavToggle = document.createElement('button');
             mobileNavToggle.classList.add('mobile-nav-toggle');
-            mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            mobileNavToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+            // ARIA attributes for accessibility
+            const navId = nav.id || 'primary-menu';
+            if (!nav.id) nav.id = navId;
+            mobileNavToggle.setAttribute('aria-controls', navId);
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+            mobileNavToggle.setAttribute('aria-label', 'Toggle navigation');
             header.querySelector('.container').appendChild(mobileNavToggle);
             
             mobileNavToggle.addEventListener('click', function() {
                 nav.classList.toggle('active');
                 const icon = this.querySelector('i');
-                if (nav.classList.contains('active')) {
+                const expanded = nav.classList.contains('active');
+                if (expanded) {
                     icon.classList.remove('fa-bars');
                     icon.classList.add('fa-times');
+                    mobileNavToggle.setAttribute('aria-expanded', 'true');
                 } else {
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
+                    mobileNavToggle.setAttribute('aria-expanded', 'false');
                 }
             });
         }

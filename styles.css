@@ -261,7 +261,7 @@ nav ul li a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.55);
     z-index: 1;
 }
 
@@ -294,6 +294,27 @@ nav ul li a.active {
     justify-content: center;
     gap: 20px;
 }
+
+/* Trust strip under hero */
+.trust-strip {
+    background-color: #fff;
+    padding: 20px 0;
+}
+.trust-list {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.trust-list li {
+    color: #2a2a2a;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.trust-list i { color: var(--secondary-color); }
 
 /* Services Overview */
 .services-overview {
