@@ -10,6 +10,7 @@
     --success-color: #28a745;
     --error-color: #dc3545;
     --warning-color: #ffc107;
+    --container-width: 1100px; /* site max width */
 }
 
 * {
@@ -27,7 +28,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -118,9 +119,9 @@ header .container {
     align-items: center;
     padding: 12px 20px; /* inner spacing */
     background-color: #003366;
-    max-width: 100%; /* make header bar full width */
-    border-radius: 0; /* flush edges */
-    margin: 0; /* no outer margin so it spans full width */
+    max-width: var(--container-width); /* align with site width */
+    border-radius: 8px; /* consistent with sections */
+    margin: 10px auto; /* center header bar */
 }
 
 .left-section {
