@@ -301,4 +301,21 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     })();
+
+    // Animate Our Service Process on scroll into view
+    const serviceProcess = document.querySelector('.service-process');
+    if (serviceProcess && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    serviceProcess.classList.add('in-view');
+                    io.unobserve(serviceProcess);
+                }
+            });
+        }, { threshold: 0.25 });
+        io.observe(serviceProcess);
+    } else if (serviceProcess) {
+        // Fallback: activate on load
+        serviceProcess.classList.add('in-view');
+    }
 });
