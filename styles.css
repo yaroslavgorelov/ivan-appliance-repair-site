@@ -173,9 +173,14 @@ header .container {
 }
 
 .logo-img {
-    height: 75px;
+    height: 62px;
     margin-right: 10px;
     vertical-align: middle;
+    background-color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #e3e9f2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 nav ul {
