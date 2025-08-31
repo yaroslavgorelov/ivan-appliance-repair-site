@@ -890,6 +890,7 @@ footer .container { padding: 0 20px; }
 .service-item:nth-child(even) .service-item-image { justify-content: flex-start; }
 .service-item-image img {
     width: 100% !important; /* fill container */
+    max-width: 260px; /* hard cap to keep images small */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
