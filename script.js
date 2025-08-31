@@ -321,11 +321,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Language switcher: EN/UK
     (function i18nSetup(){
-        const dict = window.I18N_DICTIONARY || {};
+        const getDict = () => (window.I18N_DICTIONARY || {});
         const getLang = () => localStorage.getItem('lang') || 'en';
         const setLang = (l) => localStorage.setItem('lang', l);
 
         function translateNode(node, lang) {
+            const dict = getDict();
             const map = dict[lang];
             if (!map) return;
             const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null);
@@ -362,5 +363,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Initial
         applyLang(getLang());
+        window.addEventListener('i18n:ready', () => applyLang(getLang()));
     })();
 });
