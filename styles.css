@@ -977,7 +977,8 @@ footer .container { padding: 0 20px; }
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0,0,0,.06);
-    margin-bottom: 24px;
+    margin-bottom: 0; /* spacing handled by grid gap */
+    height: 100%;
 }
 .services-section.card-view .service-item-image { flex: initial; width: 100%; }
 .services-section.card-view .service-item-image img { width: 100% !important; height: auto; border-radius: 8px; }
@@ -985,6 +986,19 @@ footer .container { padding: 0 20px; }
 .services-section.card-view .service-item:first-of-type { gap: 16px; }
 .services-section.card-view .service-item:first-of-type .service-item-content { flex: initial; max-width: 100%; }
 .services-section.card-view .service-item:first-of-type .service-item-image { flex: initial; width: 100%; max-width: 100%; }
+
+/* Two-column grid on desktop, single column on tablet/mobile */
+.services-section.card-view .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+.services-section.card-view .services-intro { grid-column: 1 / -1; margin-bottom: 0; }
+
+@media (max-width: 900px) {
+    .services-section.card-view .container { grid-template-columns: 1fr; }
+}
 
 /* Refrigerator Repair (first service item) — text 1/3 width, large image pressed to text */
 .services-section .service-item:first-of-type { gap: 8px; }
