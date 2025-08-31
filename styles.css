@@ -109,14 +109,14 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0 20px;
+    padding: 0; /* align with main container */
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 12px 0; /* horizontal padding comes from .container */
     background-color: #003366;
     border-radius: 8px;
     margin: 10px 0;
