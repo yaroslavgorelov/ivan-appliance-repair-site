@@ -117,6 +117,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* allow centering nav absolutely */
     padding: 12px 20px; /* inner spacing */
     background-color: #003366;
     max-width: 100%; /* span full width */
@@ -184,6 +185,13 @@ header .container {
 nav ul {
     display: flex;
     list-style: none;
+}
+
+/* Center nav between logo and right section */
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Hide mobile toggle by default (shown in mobile via injected CSS) */
@@ -525,6 +533,12 @@ footer .container { padding: 0 20px; }
         align-items: center;
         margin-bottom: 20px;
         gap: 15px;
+    }
+    /* Reset nav to normal flow on mobile */
+    nav {
+        position: static;
+        transform: none;
+        width: 100%;
     }
     
     .right-section {
