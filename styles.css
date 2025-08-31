@@ -877,7 +877,7 @@ footer .container { padding: 0 20px; }
     margin-bottom: 50px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 30px;
+    gap: 16px; /* tighter space between image and text */
     align-items: center;
 }
 
@@ -885,36 +885,18 @@ footer .container { padding: 0 20px; }
     grid-template-columns: 2fr 1fr;
 }
 
+.service-item-image { display: flex; }
+.service-item:nth-child(odd) .service-item-image { justify-content: flex-end; }
+.service-item:nth-child(even) .service-item-image { justify-content: flex-start; }
 .service-item-image img {
-    width: 100%;
+    width: 100% !important; /* override individual tweaks for consistent look */
+    max-width: 520px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Individual PNG image sizes for services page */
-.service-item-image img[src="images/Refrigerator Repair.png"] {
-    width: 75%;
-}
-
-.service-item-image img[src="images/Washer Repair.png"] {
-    width: 70%;
-}
-
-.service-item-image img[src="images/Dryer Repair.png"] {
-    width: 80%;
-}
-
-.service-item-image img[src="images/Dishwasher Repair.png"] {
-    width: 30%;
-}
-
-.service-item-image img[src="images/Oven Repair.png"] {
-    width: 85%;
-}
-
-.service-item-image img[src="images/Microwave Repair.png"] {
-    width: 60%;
-}
+/* (Deprecated) individual PNG sizing removed in favor of consistent layout */
 
 .service-item-content h3 {
     margin-bottom: 15px;
