@@ -868,8 +868,9 @@ footer .container { padding: 0 20px; }
     font-size: 1.1rem;
     text-align: justify; /* align to both edges */
     text-justify: inter-word;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: none;
+    width: 100%;
+    margin: 0;
 }
 
 .service-item {
