@@ -116,10 +116,11 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px; /* match global .container horizontal padding for alignment */
+    padding: 12px 20px; /* inner spacing */
     background-color: #003366;
-    border-radius: 8px;
-    margin: 10px 0;
+    max-width: 100%; /* make header bar full width */
+    border-radius: 0; /* flush edges */
+    margin: 0; /* no outer margin so it spans full width */
 }
 
 .left-section {
