@@ -383,4 +383,15 @@ document.addEventListener('DOMContentLoaded', function() {
         applyLang(getLang());
         window.addEventListener('i18n:ready', () => applyLang(getLang()));
     })();
+
+    // Hide all booking links: "Book Now" and "Book … Repair" buttons
+    (function hideBookLinks(){
+        const anchors = Array.from(document.querySelectorAll('a'));
+        anchors.forEach(a => {
+            const txt = (a.textContent || '').trim();
+            if (/^Book Now$/i.test(txt) || /^Book\s+.+\s+Repair$/i.test(txt)) {
+                a.style.display = 'none';
+            }
+        });
+    })();
 });
