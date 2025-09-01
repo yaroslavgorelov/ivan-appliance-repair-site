@@ -1020,13 +1020,13 @@ footer .container { padding: 0 20px; }
 
 /* Enlarge Refrigerator Repair image (first card) 2x */
 .services-section.card-view .service-item:first-of-type .service-item-image {
-    flex: 0 0 800px !important;
-    width: 800px !important;
+    flex: 0 0 960px !important;
+    width: 960px !important;
     max-width: 100%;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .services-section.card-view .service-item:first-of-type .service-item-image {
-        flex-basis: 520px; width: 520px;
+        flex-basis: 640px; width: 640px;
     }
 }
 @media (max-width: 900px) {
