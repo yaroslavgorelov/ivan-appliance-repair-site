@@ -60,28 +60,39 @@ document.addEventListener('DOMContentLoaded', function() {
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 const answer = item.querySelector('.faq-answer');
-                
-                // Initially hide answers
-                answer.style.display = 'none';
-                
-                // Add click event to questions
-                question.addEventListener('click', () => {
-                    // Toggle current answer
-                    const isOpen = answer.style.display === 'block';
-                    answer.style.display = isOpen ? 'none' : 'block';
-                    
-                    // Toggle icon if it exists
-                    const icon = question.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-plus');
-                        icon.classList.toggle('fa-minus');
+                if (!question || !answer) return;
+
+                // ARIA
+                question.setAttribute('role', 'button');
+                question.setAttribute('tabindex', '0');
+                question.setAttribute('aria-expanded', 'false');
+                const answerId = 'faq-' + Math.random().toString(36).slice(2,8);
+                answer.id = answerId;
+                question.setAttribute('aria-controls', answerId);
+
+                // Start collapsed
+                item.classList.remove('open');
+                answer.style.maxHeight = '0px';
+
+                function toggle() {
+                    const open = item.classList.toggle('open');
+                    question.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    if (open) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = '0px';
                     }
+                }
+
+                question.addEventListener('click', toggle);
+                question.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
                 });
-                
-                // Add toggle icon
+
+                // Add chevron icon
                 if (!question.querySelector('i')) {
                     const icon = document.createElement('i');
-                    icon.classList.add('fas', 'fa-plus');
+                    icon.classList.add('fas', 'fa-chevron-down');
                     question.appendChild(icon);
                 }
             });

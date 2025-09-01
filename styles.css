@@ -1262,6 +1262,38 @@ footer .container { padding: 0 20px; }
     margin-bottom: 20px;
 }
 
+/* FAQ modern styles */
+.faq-section { padding: 60px 0; background: var(--light-bg); }
+.faq-section .container { max-width: 900px; }
+.faq-container { display: grid; gap: 16px; }
+.faq-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 20px;
+    cursor: pointer;
+    user-select: none;
+}
+.faq-question h3 { margin: 0; font-size: 1.15rem; }
+.faq-question i { transition: transform 0.25s ease; color: var(--secondary-color); }
+.faq-answer {
+    padding: 0 20px 0 20px;
+    border-top: 1px solid var(--border-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+.faq-answer p { margin: 16px 0 20px 0; }
+.faq-item.open .faq-question i { transform: rotate(180deg); }
+.faq-item.open .faq-answer { max-height: 500px; }
+
 /* Fix for Font Awesome icons */
 .fas.fa-refrigerator:before {
     content: "\f7e4"; /* Using snowflake icon as substitute */
