@@ -325,19 +325,36 @@ document.addEventListener('DOMContentLoaded', function() {
         const getLang = () => localStorage.getItem('lang') || 'en';
         const setLang = (l) => localStorage.setItem('lang', l);
 
+        // Keep original text nodes so language can switch back and forth
+        const ORIG = new WeakMap();
+        function captureOriginals(root) {
+            const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+            let n;
+            while ((n = walker.nextNode())) {
+                if (!ORIG.has(n)) {
+                    ORIG.set(n, n.nodeValue);
+                }
+            }
+        }
+
         function translateNode(node, lang) {
             const dict = getDict();
             const map = dict[lang];
-            if (!map) return;
             const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null);
             let current;
             while ((current = walker.nextNode())) {
-                const raw = current.nodeValue;
-                const key = raw.trim();
-                if (!key) continue;
-                if (map[key]) {
-                    // Preserve surrounding whitespace
-                    current.nodeValue = raw.replace(key, map[key]);
+                const original = ORIG.get(current) ?? current.nodeValue;
+                if (!ORIG.has(current)) ORIG.set(current, original);
+                if (lang === 'en' || !map) {
+                    current.nodeValue = original;
+                    continue;
+                }
+                const key = original.trim();
+                if (key && map[key]) {
+                    // Replace exact original trimmed segment, preserving surrounding whitespace
+                    current.nodeValue = original.replace(key, map[key]);
+                } else {
+                    current.nodeValue = original;
                 }
             }
         }
@@ -362,6 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Initial
+        captureOriginals(document.body);
         applyLang(getLang());
         window.addEventListener('i18n:ready', () => applyLang(getLang()));
     })();

@@ -132,12 +132,18 @@ window.I18N_DICTIONARY = {
     'Licensed & Insured': 'Ліцензовано та застраховано',
     'Same‑Day Service': 'Того ж дня',
     '90‑Day Warranty': 'Гарантія 90 днів',
+    'Same�?`Day Service': 'Того ж дня',
+    '90�?`Day Warranty': 'Гарантія 90 днів',
 
     // Contact blocks
     'Get In Touch': 'Зв’яжіться з нами',
     'Phone': 'Телефон',
     'Email': 'Електронна пошта',
     'Send Us a Message': 'Надіслати повідомлення',
+    'Name': 'Ім’я',
+    'Subject': 'Тема',
+    'Message': 'Повідомлення',
+    'Send Message': 'Надіслати',
 
     // Booking labels
     'Service Type*': 'Тип послуги*',
@@ -160,6 +166,60 @@ window.I18N_DICTIONARY = {
     'Additional Information (optional)': 'Додаткова інформація (необов’язково)',
     'I agree to the terms and conditions*': 'Я погоджуюся з умовами та положеннями*',
     'Book Appointment': 'Записатися',
+
+    // Booking page: lead text & headings
+    "Please fill out the form below to schedule a service appointment. We'll confirm your appointment via email or phone as soon as possible.":
+      'Будь ласка, заповніть форму нижче, щоб записатися на сервіс. Ми підтвердимо запис електронною поштою або телефоном якнайшвидше.',
+    'Service Information': 'Інформація про послугу',
+    'Service Type*': 'Тип послуги*',
+    'Select a service': 'Оберіть послугу',
+    'Appliance Brand': 'Бренд техніки',
+    'e.g., Whirlpool, Samsung, LG': 'напр., Whirlpool, Samsung, LG',
+    'Appliance Model (if known)': 'Модель техніки (якщо відомо)',
+    'e.g., WRF535SWHZ': 'напр., WRF535SWHZ',
+    'Description of Issue*': 'Опис проблеми*',
+    "Please describe the problem you're experiencing with your appliance": 'Опишіть проблему з технікою',
+    'Preferred Date and Time': 'Бажана дата та час',
+    'Preferred Date*': 'Бажана дата*',
+    'Preferred Time*': 'Бажаний час*',
+    'Alternate Date (optional)': 'Альтернативна дата (необов’язково)',
+    'Alternate Time (optional)': 'Альтернативний час (необов’язково)',
+    'Contact Information': 'Контактні дані',
+    'First Name*': 'Ім’я*',
+    'Last Name*': 'Прізвище*',
+    'Email*': 'Ел. пошта*',
+    'Phone Number*': 'Номер телефону*',
+    'Service Address': 'Адреса виконання',
+    'Street Address*': 'Адреса*',
+    'City*': 'Місто*',
+    'ZIP Code*': 'Поштовий індекс*',
+    'Additional Information (optional)': 'Додаткова інформація (необов’язково)',
+    'Parking instructions, gate codes, etc.': 'Інструкції щодо паркування, коди воріт тощо',
+    'I agree to the terms and conditions*': 'Я погоджуюся з умовами та положеннями*',
+    'What to Expect': 'Чого очікувати',
+    'Service Fees': 'Вартість послуг',
+    'Cancellation Policy': 'Політика скасування',
+
+    // FAQ (Contact)
+    'Frequently Asked Questions': 'Поширені запитання',
+    'Do you offer same-day service?': 'Чи надаєте ви послуги в той самий день?',
+    'Yes, we strive to provide same-day service whenever possible, especially for emergency situations like refrigerator or freezer issues. Please call us as early in the day as possible to schedule a same-day appointment.':
+      'Так, ми намагаємось надавати послуги в той самий день, особливо в екстрених ситуаціях (наприклад, проблеми з холодильником або морозильною камерою). Будь ласка, зателефонуйте якомога раніше, щоб ми змогли запланувати виїзд.',
+    'What brands do you service?': 'З якими брендами ви працюєте?',
+    'We service all major appliance brands, including but not limited to: Whirlpool, GE, Samsung, LG, Maytag, Frigidaire, KitchenAid, Bosch, Kenmore, and many more.':
+      'Ми працюємо з усіма провідними брендами побутової техніки, зокрема: Whirlpool, GE, Samsung, LG, Maytag, Frigidaire, KitchenAid, Bosch, Kenmore та ін.',
+    'Do you provide a warranty on repairs?': 'Чи надаєте ви гарантію на ремонт?',
+    "Yes, we provide a 90-day warranty on all parts and labor. If you experience any issues with the repaired appliance within this period, we'll return to fix it at no additional cost.":
+      'Так, ми надаємо 90-денну гарантію на запчастини та роботи. Якщо у цей період виникнуть проблеми з відремонтованою технікою, ми повернемося та усунемо їх без додаткової оплати.',
+    'What forms of payment do you accept?': 'Які способи оплати ви приймаєте?',
+    'We accept cash, credit cards (Visa, MasterCard, American Express, Discover), and personal checks.':
+      'Ми приймаємо готівку, банківські картки (Visa, MasterCard, American Express, Discover) та особисті чеки.',
+
+    // Map/Service area
+    'Our Service Area': 'Зона обслуговування',
+    'Map placeholder — Tampa Bay Area': 'Заглушка карти — район Тампа-Бей',
+    'We provide appliance repair services throughout the Tampa Bay Area, including Tampa, St. Petersburg, Clearwater, and surrounding communities.':
+      'Ми надаємо послуги ремонту побутової техніки по всьому району Тампа-Бей, включно з містами Тампа, Сент-Пітерсберг, Кліруотер та прилеглими громадами.',
   }
 };
 
