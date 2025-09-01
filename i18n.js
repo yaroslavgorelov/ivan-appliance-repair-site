@@ -130,10 +130,12 @@ window.I18N_DICTIONARY = {
 
     // Trust strip
     'Licensed & Insured': 'Ліцензовано та застраховано',
-    'Same‑Day Service': 'Того ж дня',
-    '90‑Day Warranty': 'Гарантія 90 днів',
-    'Same�?`Day Service': 'Того ж дня',
-    '90�?`Day Warranty': 'Гарантія 90 днів',
+    'Same&Next‑Day Service': 'Того ж або наступного дня',
+    '180‑Day Warranty': 'Гарантія 180 днів',
+    'Same‑Day Service': 'Того ж або наступного дня',
+    '90‑Day Warranty': 'Гарантія 180 днів',
+    'Same�?`Day Service': 'Того ж або наступного дня',
+    '90�?`Day Warranty': 'Гарантія 180 днів',
 
     // Contact blocks
     'Get In Touch': 'Зв’яжіться з нами',
