@@ -211,8 +211,8 @@ window.I18N_DICTIONARY = {
     'We service all major appliance brands, including but not limited to: Whirlpool, GE, Samsung, LG, Maytag, Frigidaire, KitchenAid, Bosch, Kenmore, and many more.':
       'Ми працюємо з усіма провідними брендами побутової техніки, зокрема: Whirlpool, GE, Samsung, LG, Maytag, Frigidaire, KitchenAid, Bosch, Kenmore та ін.',
     'Do you provide a warranty on repairs?': 'Чи надаєте ви гарантію на ремонт?',
-    "Yes, we provide a 90-day warranty on all parts and labor. If you experience any issues with the repaired appliance within this period, we'll return to fix it at no additional cost.":
-      'Так, ми надаємо 90-денну гарантію на запчастини та роботи. Якщо у цей період виникнуть проблеми з відремонтованою технікою, ми повернемося та усунемо їх без додаткової оплати.',
+    "Yes, we provide a 180-day warranty on all parts and labor. If you experience any issues with the repaired appliance within this period, we'll return to fix it at no additional cost.":
+      'Так, ми надаємо 180-денну гарантію на запчастини та роботи. Якщо у цей період виникнуть проблеми з відремонтованою технікою, ми повернемося та усунемо їх без додаткової оплати.',
     'What forms of payment do you accept?': 'Які способи оплати ви приймаєте?',
     'We accept cash, credit cards (Visa, MasterCard, American Express, Discover), and personal checks.':
       'Ми приймаємо готівку, банківські картки (Visa, MasterCard, American Express, Discover) та особисті чеки.',

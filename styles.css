@@ -985,15 +985,34 @@ footer .container { padding: 0 20px; }
     margin-bottom: 0; /* spacing handled by grid gap */
     height: 100%;
 }
-.services-section.card-view .service-item-image { flex: 0 0 320px; width: 320px; }
-.services-section.card-view .service-item-image img { width: 100% !important; height: auto; border-radius: 8px; }
+.services-section.card-view .service-item-image {
+    flex: 0 0 320px;
+    width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.services-section.card-view .service-item-image:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0,0,0,.08);
+}
+.services-section.card-view .service-item-image img {
+    width: 100% !important;
+    height: auto;
+    border-radius: 8px;
+}
 .services-section.card-view .service-item-image img[alt="Dishwasher Repair"] {
-    width: 33% !important; /* 3x smaller */
-    display: block;
-    margin: 0 auto; /* center within card */
+    width: 100% !important;
+    margin: 0;
 }
 @media (max-width: 900px) {
-    .services-section.card-view .service-item-image img[alt="Dishwasher Repair"] { width: 60% !important; }
+    .services-section.card-view .service-item-image img[alt="Dishwasher Repair"] { width: 100% !important; }
 }
 .services-section.card-view .service-item-content { flex: 1 1 auto; width: auto; max-width: none; }
 .services-section.card-view .service-item:first-of-type { gap: 16px; flex-direction: row; }
