@@ -405,4 +405,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     })();
+
+    // Equalize heights of service image/text cards per row (Services page)
+    function equalizeServiceHeights(){
+        const items = document.querySelectorAll('.services-section.card-view .service-item');
+        if (!items.length) return;
+        items.forEach(it => {
+            const imgBox = it.querySelector('.service-item-image');
+            const txtBox = it.querySelector('.service-item-content');
+            if (!imgBox || !txtBox) return;
+            imgBox.style.height = 'auto';
+            txtBox.style.height = 'auto';
+        });
+        items.forEach(it => {
+            const imgBox = it.querySelector('.service-item-image');
+            const txtBox = it.querySelector('.service-item-content');
+            if (!imgBox || !txtBox) return;
+            const h = Math.max(imgBox.offsetHeight, txtBox.offsetHeight);
+            imgBox.style.height = h + 'px';
+            txtBox.style.height = h + 'px';
+        });
+    }
+
+    window.addEventListener('load', equalizeServiceHeights);
+    window.addEventListener('resize', (() => {
+        let t; return () => { clearTimeout(t); t = setTimeout(equalizeServiceHeights, 150); };
+    })());
+    // Re-apply after language switching (content height changes)
+    window.addEventListener('i18n:ready', equalizeServiceHeights);
 });
