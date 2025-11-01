@@ -1353,3 +1353,7 @@ footer .container { padding: 0 20px; }
 .fas.fa-microwave:before {
     content: "\f7b6"; /* Using bolt icon as substitute */
 }
+
+.review-cta {
+    margin-bottom: 40px; /* adds space between the review section and the blue banner */
+}
